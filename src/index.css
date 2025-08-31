@@ -1,0 +1,326 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+/* Portfolio Design System */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Enhanced Futuristic Color System */
+    --dark-bg: 210 24% 4%;
+    --green-primary: 142 84% 24%;
+    --green-secondary: 142 76% 36%;
+    --green-accent: 142 69% 58%;
+    --beam-green: 142 84% 24%;
+    --cyber-blue: 200 100% 50%;
+    --neon-pink: 320 100% 60%;
+    --plasma-purple: 280 100% 70%;
+    
+    /* Advanced Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(var(--green-primary)), hsl(var(--cyber-blue)));
+    --gradient-plasma: linear-gradient(45deg, hsl(var(--green-accent)), hsl(var(--plasma-purple)));
+    --gradient-neural: linear-gradient(90deg, hsl(var(--green-primary)), hsl(var(--green-accent)), hsl(var(--cyber-blue)));
+    --gradient-hologram: linear-gradient(180deg, hsl(var(--green-accent) / 0.8), hsl(var(--green-primary) / 0.2));
+    
+    /* Enhanced Shadows */
+    --shadow-cyber: 0 20px 40px -10px hsl(var(--green-accent) / 0.4);
+    --shadow-neural: 0 0 50px hsl(var(--green-primary) / 0.6);
+    --shadow-plasma: 0 10px 60px -10px hsl(var(--plasma-purple) / 0.3);
+    
+    /* Motion Variables */
+    --transition-neural: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-quantum: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-dark-bg text-foreground font-sans;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Next-Level Futuristic Button System */
+  .btn-neural {
+    @apply relative bg-gradient-to-r from-green-primary via-green-secondary to-green-accent text-white px-8 py-4 rounded-full font-semibold font-orbitron tracking-wider overflow-hidden;
+    transition: var(--transition-neural);
+    box-shadow: var(--shadow-cyber);
+  }
+  .btn-neural::before {
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] transition-transform duration-700;
+    content: '';
+  }
+  .btn-neural:hover::before {
+    @apply translate-x-[200%];
+  }
+  .btn-neural:hover {
+    @apply scale-110 shadow-2xl;
+    box-shadow: var(--shadow-neural);
+  }
+  
+  .btn-quantum {
+    @apply relative flex items-center space-x-3 border-2 border-green-accent/60 text-green-accent px-6 py-3 rounded-full font-semibold font-orbitron tracking-wide backdrop-blur-md overflow-hidden;
+    transition: var(--transition-quantum);
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), transparent);
+  }
+  .btn-quantum::after {
+    @apply absolute inset-0 bg-gradient-to-r from-green-primary/30 to-green-accent/30 opacity-0 transition-opacity duration-500;
+    content: '';
+  }
+  .btn-quantum:hover::after {
+    @apply opacity-100;
+  }
+  .btn-quantum:hover {
+    @apply scale-105 border-green-accent text-white shadow-lg;
+    box-shadow: var(--shadow-cyber);
+  }
+  
+  .btn-plasma {
+    @apply relative text-white px-8 py-4 rounded-2xl font-bold font-orbitron tracking-widest uppercase overflow-hidden;
+    background: var(--gradient-plasma);
+    transition: var(--transition-neural);
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  .btn-plasma::before {
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 transition-opacity duration-500;
+    content: '';
+  }
+  .btn-plasma:hover::before {
+    @apply opacity-100 animate-ping;
+  }
+  .btn-plasma:hover {
+    @apply scale-110 shadow-2xl;
+    box-shadow: var(--shadow-plasma);
+  }
+  
+  /* Advanced Card System */
+  .floating-card {
+    @apply relative transform;
+    transition: var(--transition-neural);
+    animation: float-gentle 6s ease-in-out infinite;
+  }
+  .floating-card:hover {
+    @apply scale-105 -translate-y-2;
+    box-shadow: var(--shadow-cyber);
+  }
+  
+  .neural-card {
+    @apply relative bg-gradient-to-br from-gray-900/95 via-black/90 to-slate-800/85 backdrop-blur-xl border border-green-accent/40 rounded-2xl overflow-hidden;
+    transition: var(--transition-neural);
+    box-shadow: var(--shadow-cyber);
+  }
+  .neural-card::before {
+    @apply absolute inset-0 bg-gradient-to-br from-green-primary/10 via-transparent to-green-accent/5 opacity-0 transition-opacity duration-500 pointer-events-none;
+    content: '';
+  }
+  .neural-card:hover::before {
+    @apply opacity-100;
+  }
+  .neural-card:hover {
+    @apply scale-105 -translate-y-3 border-green-accent/60;
+    box-shadow: var(--shadow-neural);
+  }
+  
+  .hologram-card {
+    @apply relative backdrop-blur-xl border border-green-accent/30 rounded-3xl overflow-hidden;
+    background: var(--gradient-hologram);
+    transition: var(--transition-quantum);
+  }
+  .hologram-card::after {
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-green-accent/20 to-transparent translate-x-[-200%] transition-transform duration-1000;
+    content: '';
+  }
+  .hologram-card:hover::after {
+    @apply translate-x-[200%];
+  }
+  
+  /* Info Card Elements */
+  .info-row {
+    @apply flex justify-between items-center py-1;
+  }
+  
+  .tech-badge {
+    @apply px-3 py-1 bg-green-primary/20 border border-green-accent/30 text-green-accent text-xs rounded-full font-medium transition-all duration-300 hover:bg-green-accent/20 hover:scale-105;
+  }
+  
+  .pulse-dot {
+    @apply w-3 h-3 bg-green-accent rounded-full animate-pulse;
+  }
+  
+  /* Section Styling */
+  .section-padding {
+    @apply py-20 px-6 md:px-12 lg:px-24;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-center mb-4;
+  }
+  
+  .section-subtitle {
+    @apply text-lg md:text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto;
+  }
+  
+  /* Hero Background */
+  .hero-bg {
+    @apply relative overflow-hidden bg-gradient-to-br from-dark-bg via-slate-900 to-dark-bg;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+  }
+  
+  .hero-beam {
+    @apply absolute w-1 h-96 bg-gradient-to-b from-transparent via-beam-green to-transparent opacity-30;
+  }
+  
+  /* Navigation */
+  .nav-link {
+    @apply text-gray-300 hover:text-green-accent transition-colors duration-300 font-medium;
+  }
+  
+  .nav-active {
+    @apply text-green-accent;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-green-primary to-green-accent bg-clip-text text-transparent;
+  }
+  
+  .bg-glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-3000 {
+    animation-delay: 3s;
+  }
+}
+
+/* Advanced Keyframe Animations */
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-3px) rotate(0.5deg); }
+  50% { transform: translateY(-6px) rotate(1deg); }
+  75% { transform: translateY(-3px) rotate(0.5deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(var(--green-accent) / 0.3); }
+  50% { box-shadow: 0 0 40px hsl(var(--green-accent) / 0.6); }
+}
+
+@keyframes neural-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes quantum-scan {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes cyber-grid {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes hologram-flicker {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0.9; }
+}
+
+/* Apply animations */
+.animate-float-gentle { animation: float-gentle 6s ease-in-out infinite; }
+.animate-neural-pulse { animation: neural-pulse 2s ease-in-out infinite; }
+.animate-quantum-scan { animation: quantum-scan 3s ease-in-out infinite; }
+.animate-cyber-grid { animation: cyber-grid 4s ease-in-out infinite; }
+.animate-hologram-flicker { animation: hologram-flicker 8s ease-in-out infinite; }
