@@ -58,7 +58,7 @@ const AboutSection = () => {
 
                 <div className="prose prose-lg">
                   <p className="text-gray-300 leading-relaxed text-lg mb-4">
-                    I'm a 17-year-old student from <strong className="text-green-accent">Beaconhouse School, Multan</strong>, deeply passionate about 
+                    I'm <strong className="text-green-accent">Moiz Amjad</strong>, a 17-year-old student from <strong className="text-green-accent">Beaconhouse School, Multan</strong>, deeply passionate about 
                     the intersection of data science, artificial intelligence, and machine learning. My journey into 
                     the world of data began with a curiosity about how we can extract meaningful patterns from complex information.
                   </p>
@@ -66,13 +66,18 @@ const AboutSection = () => {
                   <p className="text-gray-300 leading-relaxed text-lg mb-4">
                     Currently exploring various aspects of <strong className="text-green-accent">Data Science, AI, and ML</strong>, I'm constantly 
                     learning new techniques and applying them to real-world problems. From building predictive models 
-                    to creating intelligent applications, I enjoy the challenge of transforming raw data into actionable insights.
+                    to creating intelligent web applications, I enjoy the challenge of transforming raw data into actionable insights.
+                  </p>
+                  
+                  <p className="text-gray-300 leading-relaxed text-lg mb-4">
+                    With over 2 years of programming experience and 6+ projects under my belt, I specialize in <strong className="text-green-accent">Python, Java, React, and cloud technologies</strong>. 
+                    My technical skills span machine learning frameworks, data visualization, and full-stack development.
                   </p>
                   
                   <p className="text-gray-300 leading-relaxed text-lg">
                     When I'm not coding or analyzing datasets, you'll find me working on innovative projects that 
                     combine technology with practical solutions. I believe in the power of data to drive positive 
-                    change and create smarter, more efficient systems.
+                    change and create smarter, more efficient systems for the future.
                   </p>
                 </div>
 
