@@ -34,8 +34,8 @@ const ContactSection = () => {
               <span className="italic text-clay">internship.</span>
             </h2>
             <p className="mt-6 text-paper/65 max-w-sm leading-relaxed text-sm sm:text-base">
-              Open to data science and ML roles, research-minded teams, and
-              product groups that care about clean analysis. Multan · remote OK.
+              Open to software, data, and product internships — Python, Java,
+              React, and applied ML. Multan · remote OK.
             </p>
           </div>
 

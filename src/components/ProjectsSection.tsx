@@ -3,87 +3,87 @@ import React from "react";
 const projects = [
   {
     title: "MoodBloom",
-    role: "Sole builder",
-    category: "Applied NLP",
+    role: "Python · product",
+    category: "NLP application",
     date: "2024",
     summary:
-      "Emotion-aware journaling app that analyzes free-text entries and surfaces longitudinal mood patterns for personal wellness tracking.",
+      "Journaling product with a Python NLP layer that reads free-text entries and returns emotion trends people can actually follow.",
     impact: [
-      "Built NLP pipeline for emotion classification from user journals",
-      "Designed insight layer that turns raw labels into readable trends",
-      "Shipped end-to-end flow: capture → model → feedback UI",
+      "Emotion classification pipeline on journal text",
+      "Insight layer from raw labels to readable trends",
+      "End-to-end flow: capture → model → feedback UI",
     ],
-    stack: ["Python", "NLP", "Emotion AI", "Product UX"],
+    stack: ["Python", "NLP", "Product UX"],
   },
   {
     title: "HomeCalc",
-    role: "Sole builder",
+    role: "Python · forecasting",
     category: "Predictive modeling",
     date: "2024",
     summary:
-      "Household expense forecasting system that estimates upcoming budgets from historical spend and highlights categories driving variance.",
+      "Household budget forecaster in Python — estimates next-period spend and surfaces the categories driving variance.",
     impact: [
-      "Feature engineering on messy multi-month spend data",
-      "Trained regression models for next-period budget prediction",
-      "Presented forecasts in a format non-technical users can act on",
+      "Feature work on multi-month spend history",
+      "Regression models for budget prediction",
+      "Outputs designed for non-technical readers",
     ],
-    stack: ["Python", "Scikit-learn", "Pandas", "Forecasting"],
+    stack: ["Python", "Scikit-learn", "Pandas"],
   },
   {
-    title: "Data Science Internship",
-    role: "Intern",
-    category: "Industry analytics",
-    date: "2025",
-    summary:
-      "End-to-end analytics engagement: exploratory analysis, predictive modeling, and stakeholder-ready visualization for business questions.",
-    impact: [
-      "Ran structured EDA to isolate drivers behind target metrics",
-      "Built and validated predictive models for decision support",
-      "Delivered charts and narratives usable by non-technical teams",
-    ],
-    stack: ["Python", "Pandas", "Matplotlib", "Seaborn", "SQL"],
-  },
-  {
-    title: "Deep Learning Lab",
-    role: "Research practice",
-    category: "Neural networks",
-    date: "2025",
-    summary:
-      "Series of controlled deep learning experiments across vision, recommendation, and language — focused on architecture choices and evaluation, not demos.",
-    impact: [
-      "Implemented CNNs for image classification baselines",
-      "Explored sequence models and modern transformer patterns",
-      "Documented training setups, metrics, and failure modes",
-    ],
-    stack: ["PyTorch", "TensorFlow", "CNN", "RNN", "Transformers"],
-  },
-  {
-    title: "Taqdeer-e-Naw Platform",
-    role: "Full-stack + analytics",
+    title: "Taqdeer-e-Naw",
+    role: "React · analytics",
     category: "Web product",
     date: "2025",
     summary:
-      "NGO website with an analytics dashboard for community impact measurement and clearer donor communication.",
+      "NGO platform in React with an analytics dashboard so program impact is visible to teams and donors.",
     impact: [
-      "Shipped responsive public site for program visibility",
-      "Built dashboard views for engagement and impact metrics",
-      "Connected storytelling content to measurable outcomes",
+      "Responsive public site for program visibility",
+      "Dashboard views for engagement metrics",
+      "Connected story content to measurable outcomes",
     ],
-    stack: ["React", "Data visualization", "Analytics", "UI"],
+    stack: ["React", "Analytics", "UI"],
   },
   {
     title: "TagPlugin",
-    role: "Sole builder",
+    role: "Java · systems",
     category: "Intelligent systems",
     date: "2024",
     summary:
-      "Java plugin architecture for Minecraft with rule- and model-assisted tagging to automate gameplay systems and reduce manual configuration.",
+      "Java plugin architecture for Minecraft — modular tagging and automation that cuts hand-tuned configuration.",
     impact: [
-      "Designed modular plugin structure against the game API",
-      "Applied ML-inspired heuristics for smarter tag behavior",
-      "Automated workflows that previously required hand tuning",
+      "Plugin structure against the game API",
+      "Rule- and heuristic-assisted tagging",
+      "Automated workflows that used to be manual",
     ],
-    stack: ["Java", "Plugin API", "Systems design", "Automation"],
+    stack: ["Java", "API design", "Automation"],
+  },
+  {
+    title: "Data Science Internship",
+    role: "Python · analytics",
+    category: "Industry work",
+    date: "2025",
+    summary:
+      "Internship focused on EDA, predictive modeling, and stakeholder-ready visualization for business questions.",
+    impact: [
+      "Structured EDA on real operational data",
+      "Models for decision support with clear metrics",
+      "Charts and narratives for non-technical teams",
+    ],
+    stack: ["Python", "Pandas", "SQL", "Viz"],
+  },
+  {
+    title: "Deep Learning Lab",
+    role: "Python · research practice",
+    category: "Neural nets",
+    date: "2025",
+    summary:
+      "Controlled DL experiments in Python — vision, recsys, and language — with notes on metrics and failure modes.",
+    impact: [
+      "CNN baselines for image classification",
+      "Sequence and transformer-style experiments",
+      "Documented training setups and evaluation",
+    ],
+    stack: ["Python", "PyTorch", "TensorFlow"],
   },
 ];
 
@@ -98,18 +98,18 @@ const ProjectsSection = () => {
       <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pt-20 md:pt-28 pb-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
           <div className="max-w-xl">
-            <p className="section-index mb-3">02 — Selected work</p>
+            <p className="section-index mb-3">02 — Work</p>
             <h2 className="section-title">
-              Projects with{" "}
-              <span className="italic text-terra">clear outcomes</span>
+              Pages from the{" "}
+              <span className="italic text-terra">project diary</span>
             </h2>
             <p className="mt-4 text-sm sm:text-base text-ink-mid leading-relaxed">
-              Case-style writeups — problem, approach, and what shipped. Scroll to
-              stack each card; earlier work stays as a visible page edge.
+              Python analyses, Java systems, React products. Scroll — each page stacks;
+              older work stays as a thin edge underneath.
             </p>
           </div>
-          <p className="text-[12px] font-medium tracking-[0.14em] uppercase text-ink-mid shrink-0">
-            {n} featured builds
+          <p className="text-[12px] font-medium tracking-[0.14em] uppercase text-ink-mid">
+            {n} entries
           </p>
         </div>
       </div>
@@ -131,75 +131,64 @@ const ProjectsSection = () => {
               }}
             >
               <article
-                className="relative overflow-hidden rounded-2xl border border-ink/[0.1] bg-page shadow-[0_24px_60px_-28px_rgba(40,20,8,0.45)]"
+                className="diary-page"
                 style={{
-                  transform: `rotate(${i % 2 === 0 ? -0.25 : 0.3}deg)`,
+                  transform: `rotate(${i % 2 === 0 ? -0.3 : 0.35}deg)`,
                 }}
               >
-                {/* stack edge label */}
                 <div
-                  className="absolute inset-x-0 top-0 h-6 flex items-center justify-between px-5 bg-gradient-to-b from-paper/90 to-transparent pointer-events-none"
+                  className="absolute inset-x-0 top-0 h-6 flex items-center justify-between pl-12 pr-4 pointer-events-none"
                   aria-hidden
                 >
-                  <span className="text-[10px] font-semibold tracking-[0.16em] uppercase text-terra/80 truncate">
+                  <span className="text-[10px] font-semibold tracking-[0.14em] uppercase text-terra/80 truncate">
                     {p.title}
                   </span>
                   <span className="text-[10px] tabular-nums text-ink-mid/70">
-                    {String(i + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}
+                    {String(i + 1).padStart(2, "0")}/{String(n).padStart(2, "0")}
                   </span>
                 </div>
 
-                {/* accent bar */}
-                <div className="h-1 w-full bg-gradient-to-r from-terra via-terra/70 to-clay" />
-
-                <div className="p-5 sm:p-7 pt-7">
-                  <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+                <div className="relative pl-12 pr-5 sm:pr-7 pt-8 pb-6 sm:pl-14">
+                  <div className="flex flex-wrap items-start justify-between gap-3 mb-3 border-b border-terra/20 pb-3">
                     <div>
-                      <div className="flex flex-wrap items-center gap-2 mb-2">
-                        <span className="rounded-full bg-terra/10 px-2.5 py-0.5 text-[11px] font-semibold text-terra">
-                          {p.category}
-                        </span>
-                        <span className="text-[12px] text-ink-mid">{p.role}</span>
-                      </div>
-                      <h3 className="font-display text-[1.75rem] sm:text-[2rem] tracking-tight text-ink leading-tight">
-                        {p.title}
-                      </h3>
+                      <p className="text-[10px] font-semibold tracking-[0.18em] uppercase text-terra">
+                        {p.category}
+                      </p>
+                      <p className="mt-1 text-[12px] text-ink-mid">{p.role}</p>
                     </div>
-                    <span className="font-display text-sm text-ink-mid tabular-nums">
-                      {p.date}
-                    </span>
+                    <span className="font-display text-sm text-ink-mid">{p.date}</span>
                   </div>
 
-                  <p className="text-[14px] sm:text-[15px] leading-relaxed text-ink-mid">
+                  <h3 className="font-display text-[1.7rem] sm:text-[1.95rem] tracking-tight text-ink leading-tight">
+                    {p.title}
+                  </h3>
+                  <p className="mt-3 text-[14px] sm:text-[15px] leading-relaxed text-ink-mid">
                     {p.summary}
                   </p>
 
-                  <div className="mt-5">
-                    <p className="text-[10px] font-semibold tracking-[0.18em] uppercase text-ink-mid mb-2.5">
-                      What I did
-                    </p>
-                    <ul className="space-y-2">
-                      {p.impact.map((line) => (
-                        <li
-                          key={line}
-                          className="flex gap-2.5 text-[13px] sm:text-[14px] text-ink leading-snug"
-                        >
-                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-terra" />
-                          {line}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="mt-6 flex flex-wrap gap-1.5 pt-4 border-t border-ink/[0.07]">
-                    {p.stack.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-full border border-ink/10 bg-paper/70 px-2.5 py-1 text-[11px] font-medium text-ink-mid"
+                  <ul className="mt-5 space-y-2">
+                    {p.impact.map((line) => (
+                      <li
+                        key={line}
+                        className="flex gap-2 text-[13px] sm:text-[14px] text-ink leading-snug"
                       >
-                        {t}
-                      </span>
+                        <span className="mt-[0.45rem] h-1 w-1 shrink-0 bg-terra" />
+                        {line}
+                      </li>
                     ))}
+                  </ul>
+
+                  <div className="mt-5 flex flex-wrap items-end justify-between gap-3 pt-3 border-t border-dashed border-ink/15">
+                    <div className="flex flex-wrap gap-1.5">
+                      {p.stack.map((t) => (
+                        <span key={t} className="chip">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    <span className="font-display italic text-sm text-terra/80">
+                      — M.A.
+                    </span>
                   </div>
                 </div>
               </article>

@@ -1,11 +1,11 @@
 import React from "react";
 import {
-  Brain,
   Code2,
-  BarChart3,
+  Coffee,
+  Atom,
+  Brain,
   Database,
-  Cpu,
-  Sigma,
+  BarChart3,
   type LucideIcon,
 } from "lucide-react";
 
@@ -15,121 +15,109 @@ type Skill = {
   body: string;
   tools: string[];
   icon: LucideIcon;
-  level: string;
+  pillar: string;
 };
 
 const skills: Skill[] = [
   {
     n: "01",
-    title: "Machine Learning",
-    body: "Supervised models, classification, and evaluation loops I can explain — not just fit.",
-    tools: ["Scikit-learn", "Feature work", "Cross-val", "Metrics"],
-    icon: Brain,
-    level: "Core",
+    title: "Python",
+    body: "My default for analysis, automation, and ML prototypes — clean scripts and notebooks that become real tools.",
+    tools: ["Pandas", "NumPy", "Scikit-learn", "Fast scripts"],
+    icon: Code2,
+    pillar: "Primary",
   },
   {
     n: "02",
-    title: "Programming",
-    body: "Readable code from notebooks to small services and interactive frontends.",
-    tools: ["Python", "Java", "JavaScript", "TypeScript"],
-    icon: Code2,
-    level: "Core",
+    title: "Java",
+    body: "Structured systems and plugin architecture — type-safe, modular code when the problem needs discipline.",
+    tools: ["OOP", "APIs", "Plugins", "Tooling"],
+    icon: Coffee,
+    pillar: "Systems",
   },
   {
     n: "03",
-    title: "Data Visualization",
-    body: "Charts and dashboards aimed at clarity for stakeholders, not decoration.",
-    tools: ["Matplotlib", "Seaborn", "Plotly", "Dashboard UI"],
-    icon: BarChart3,
-    level: "Strong",
+    title: "React",
+    body: "Interfaces for data and product work — dashboards, marketing sites, and UI around models people can use.",
+    tools: ["Components", "Hooks", "Vite", "Tailwind"],
+    icon: Atom,
+    pillar: "Product",
   },
   {
     n: "04",
-    title: "Data Analysis",
-    body: "EDA, cleaning, and SQL-backed questions that lead to a defensible answer.",
-    tools: ["Pandas", "NumPy", "SQL", "Excel"],
-    icon: Database,
-    level: "Core",
+    title: "Machine Learning",
+    body: "Practical models with honest evaluation — classification, forecasting, and feature work in Python.",
+    tools: ["Scikit-learn", "Metrics", "Pipelines", "Validation"],
+    icon: Brain,
+    pillar: "Applied",
   },
   {
     n: "05",
-    title: "Deep Learning",
-    body: "Hands-on practice with vision and sequence models; careful with compute and metrics.",
-    tools: ["PyTorch", "TensorFlow", "CNNs", "Transformers"],
-    icon: Cpu,
-    level: "Growing",
+    title: "Data Analysis",
+    body: "EDA, cleaning, and SQL-backed questions — find the story, then prove it with evidence.",
+    tools: ["Pandas", "SQL", "Excel", "Reporting"],
+    icon: Database,
+    pillar: "Core",
   },
   {
     n: "06",
-    title: "Statistics",
-    body: "Probability and uncertainty first — models second. Comfortable discussing limits.",
-    tools: ["Inference", "Distributions", "A/B basics", "Error analysis"],
-    icon: Sigma,
-    level: "Strong",
+    title: "Visualization",
+    body: "Charts and dashboards that explain results to non-technical readers without noise.",
+    tools: ["Matplotlib", "Seaborn", "Plotly", "Dashboard UI"],
+    icon: BarChart3,
+    pillar: "Comms",
   },
 ];
-
-const levelStyle: Record<string, string> = {
-  Core: "bg-terra/12 text-terra",
-  Strong: "bg-ink/8 text-ink",
-  Growing: "bg-amber-500/10 text-amber-800",
-};
 
 const SkillsSection = () => {
   return (
     <section id="skills" className="section-shell border-t border-ink/[0.08]">
       <div className="section-inner">
         <div className="mb-12 sm:mb-14 max-w-2xl">
-          <p className="section-index mb-3">04 — Capabilities</p>
+          <p className="section-index mb-3">04 — Craft</p>
           <h2 className="section-title">
-            Skills that show up{" "}
-            <span className="italic text-terra">in the work</span>
+            <span className="italic text-terra">Python</span>,{" "}
+            <span className="italic">Java</span>,{" "}
+            <span className="italic text-terra">React</span>
+            <span className="block mt-1 text-ink">— and the data around them</span>
           </h2>
           <p className="mt-4 text-sm sm:text-base text-ink-mid leading-relaxed max-w-lg">
-            Mapped to real project use — tools I reach for when shipping analysis,
-            models, or product interfaces.
+            Three languages I actually ship with, plus the analysis and ML skills that
+            sit on top of them.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {skills.map((s) => (
-            <article
-              key={s.n}
-              className="group relative flex flex-col rounded-2xl border border-ink/[0.08] bg-page p-6 shadow-[0_12px_36px_-24px_rgba(40,20,8,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:border-terra/25 hover:shadow-[0_20px_44px_-24px_rgba(40,20,8,0.4)]"
-            >
-              <div className="flex items-start justify-between gap-3 mb-5">
-                <span className="grid h-11 w-11 place-items-center rounded-xl bg-terra/10 text-terra ring-1 ring-terra/15">
-                  <s.icon size={20} strokeWidth={1.75} />
+            <article key={s.n} className="paper-card flex flex-col p-5 sm:p-6">
+              <div className="flex items-start justify-between gap-3 mb-5 border-b border-ink/10 pb-4">
+                <span className="grid h-10 w-10 place-items-center border border-ink/12 bg-paper text-terra">
+                  <s.icon size={18} strokeWidth={1.75} />
                 </span>
-                <div className="flex flex-col items-end gap-1.5">
-                  <span className="font-display text-sm text-ink-mid/50 tabular-nums">
+                <div className="text-right">
+                  <p className="font-display text-sm text-ink-mid/50 tabular-nums">
                     {s.n}
-                  </span>
-                  <span
-                    className={`rounded-full px-2 py-0.5 text-[10px] font-semibold tracking-wide ${levelStyle[s.level]}`}
-                  >
-                    {s.level}
-                  </span>
+                  </p>
+                  <p className="mt-1 text-[10px] font-semibold tracking-[0.14em] uppercase text-terra">
+                    {s.pillar}
+                  </p>
                 </div>
               </div>
 
-              <h3 className="font-display text-[1.35rem] sm:text-2xl text-ink tracking-tight leading-snug">
+              <h3 className="font-display text-[1.45rem] sm:text-[1.65rem] text-ink tracking-tight leading-none">
                 {s.title}
               </h3>
-              <p className="mt-2.5 text-sm leading-relaxed text-ink-mid flex-1">
+              <p className="mt-3 text-sm leading-relaxed text-ink-mid flex-1">
                 {s.body}
               </p>
 
-              <div className="mt-5 pt-4 border-t border-ink/[0.07]">
+              <div className="mt-5 pt-4 border-t border-dashed border-ink/15">
                 <p className="text-[10px] font-semibold tracking-[0.16em] uppercase text-ink-mid mb-2.5">
-                  Toolkit
+                  In the kit
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {s.tools.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-md border border-ink/10 bg-paper/80 px-2 py-1 text-[11px] font-medium text-ink-mid group-hover:border-terra/20"
-                    >
+                    <span key={t} className="chip">
                       {t}
                     </span>
                   ))}

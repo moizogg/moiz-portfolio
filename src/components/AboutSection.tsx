@@ -22,9 +22,11 @@ const AboutSection = () => {
               use.
             </p>
             <p>
-              Over the last two years I&apos;ve shipped six projects spanning NLP, forecasting,
-              deep learning experiments, and product-facing web work. I default to Python for
-              analysis and modeling, and React when the result needs a clear front door.
+              Over the last two years I&apos;ve shipped work across{" "}
+              <strong className="text-ink font-semibold">Python</strong> (analysis &amp; ML),{" "}
+              <strong className="text-ink font-semibold">Java</strong> (structured systems), and{" "}
+              <strong className="text-ink font-semibold">React</strong> (product UI) — plus
+              forecasting, NLP, and dashboards when the problem needs them.
             </p>
             <p>
               I&apos;m looking for internships where I can contribute carefully, learn from
@@ -35,8 +37,8 @@ const AboutSection = () => {
               {[
                 ["Education", "Beaconhouse School, Multan"],
                 ["Based in", "Multan, Pakistan"],
-                ["Primary stack", "Python · ML · React"],
-                ["Open to", "DS / ML internships"],
+                ["Languages", "Python · Java · React"],
+                ["Open to", "Dev / data internships"],
               ].map(([dt, dd]) => (
                 <div key={dt}>
                   <dt className="text-[10px] font-semibold tracking-[0.18em] uppercase text-ink-mid mb-1">
