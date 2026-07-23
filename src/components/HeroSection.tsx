@@ -111,16 +111,29 @@ const HeroSection = () => {
               </a>
             </div>
 
-            {/* Language pillars — square paper slips */}
-            <div className="mt-12 grid grid-cols-3 gap-2.5 max-w-lg">
-              {stack.map((s) => (
-                <div key={s.name} className="paper-card p-3.5">
+            {/* Language pillars — floating square paper slips */}
+            <div className="mt-12 grid grid-cols-3 gap-2.5 max-w-lg items-start">
+              {stack.map((s, i) => (
+                <div
+                  key={s.name}
+                  className="float-card paper-card p-3.5 sm:p-4 cursor-default"
+                  style={
+                    {
+                      // slight rest offsets so the row feels like loose paper, not a rigid grid
+                      marginTop: i === 1 ? "10px" : i === 2 ? "4px" : "0px",
+                    } as React.CSSProperties
+                  }
+                >
                   <p className="font-display text-xl sm:text-2xl text-ink leading-none">
                     {s.name}
                   </p>
                   <p className="mt-2 text-[11px] text-ink-mid leading-snug">
                     {s.note}
                   </p>
+                  <div
+                    className="mt-3 h-px w-8 bg-terra/40"
+                    aria-hidden
+                  />
                 </div>
               ))}
             </div>
