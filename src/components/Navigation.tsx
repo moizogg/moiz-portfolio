@@ -47,7 +47,7 @@ const Navigation = () => {
             </a>
           ))}
           <a href="#contact" className="btn-terra !py-2.5 !px-4 text-[13px]">
-            Write me
+            Hire me
           </a>
         </nav>
 
@@ -78,7 +78,7 @@ const Navigation = () => {
             onClick={() => setOpen(false)}
             className="btn-terra mt-4 w-full"
           >
-            Write me
+            Hire me
           </a>
         </div>
       )}

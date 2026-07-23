@@ -28,14 +28,14 @@ const ContactSection = () => {
               05 — Contact
             </p>
             <h2 className="font-display text-4xl sm:text-5xl font-medium leading-[1.1] tracking-tight">
-              Tell me what
+              Let&apos;s talk about
               <br />
-              you&apos;re{" "}
-              <span className="italic text-clay">building.</span>
+              the next{" "}
+              <span className="italic text-clay">internship.</span>
             </h2>
             <p className="mt-6 text-paper/65 max-w-sm leading-relaxed text-sm sm:text-base">
-              Internships, collaborations, odd data problems — I read everything.
-              Multan, Pakistan.
+              Open to data science and ML roles, research-minded teams, and
+              product groups that care about clean analysis. Multan · remote OK.
             </p>
           </div>
 

@@ -2,112 +2,124 @@ import React from "react";
 
 const projects = [
   {
-    title: "TagPlugin",
-    blurb:
-      "AI-enhanced Minecraft systems — intelligent tags, automated play, a little chaos tamed by ML.",
-    tags: ["Java", "AI/ML", "API"],
-    category: "AI Development",
-    date: "Mar ’24",
-    note: "Lab · game systems",
-  },
-  {
     title: "MoodBloom",
-    blurb:
-      "Journaling that listens. NLP maps mood over time and returns quiet, useful insights.",
-    tags: ["Python", "NLP"],
-    category: "AI Application",
-    date: "Jun ’24",
-    note: "Wellness · language",
+    role: "Sole builder",
+    category: "Applied NLP",
+    date: "2024",
+    summary:
+      "Emotion-aware journaling app that analyzes free-text entries and surfaces longitudinal mood patterns for personal wellness tracking.",
+    impact: [
+      "Built NLP pipeline for emotion classification from user journals",
+      "Designed insight layer that turns raw labels into readable trends",
+      "Shipped end-to-end flow: capture → model → feedback UI",
+    ],
+    stack: ["Python", "NLP", "Emotion AI", "Product UX"],
   },
   {
     title: "HomeCalc",
-    blurb:
-      "Predict next month’s household spend before the surprise. Patterns over panic.",
-    tags: ["Python", "Sklearn"],
-    category: "Predictive",
-    date: "Sep ’24",
-    note: "Budget · forecast",
+    role: "Sole builder",
+    category: "Predictive modeling",
+    date: "2024",
+    summary:
+      "Household expense forecasting system that estimates upcoming budgets from historical spend and highlights categories driving variance.",
+    impact: [
+      "Feature engineering on messy multi-month spend data",
+      "Trained regression models for next-period budget prediction",
+      "Presented forecasts in a format non-technical users can act on",
+    ],
+    stack: ["Python", "Scikit-learn", "Pandas", "Forecasting"],
   },
   {
-    title: "DS Internship",
-    blurb:
-      "EDA, models, and charts that had to be clear enough for non-technical stakeholders.",
-    tags: ["Pandas", "Viz"],
-    category: "Data Science",
-    date: "Jan ’25",
-    note: "Industry · delivery",
+    title: "Data Science Internship",
+    role: "Intern",
+    category: "Industry analytics",
+    date: "2025",
+    summary:
+      "End-to-end analytics engagement: exploratory analysis, predictive modeling, and stakeholder-ready visualization for business questions.",
+    impact: [
+      "Ran structured EDA to isolate drivers behind target metrics",
+      "Built and validated predictive models for decision support",
+      "Delivered charts and narratives usable by non-technical teams",
+    ],
+    stack: ["Python", "Pandas", "Matplotlib", "Seaborn", "SQL"],
   },
   {
-    title: "Deep Learning",
-    blurb:
-      "Notebooks on vision, recsys, and language — experiments with receipts, not vibes.",
-    tags: ["PyTorch", "TF"],
-    category: "Research",
-    date: "Apr ’25",
-    note: "Models · experiments",
+    title: "Deep Learning Lab",
+    role: "Research practice",
+    category: "Neural networks",
+    date: "2025",
+    summary:
+      "Series of controlled deep learning experiments across vision, recommendation, and language — focused on architecture choices and evaluation, not demos.",
+    impact: [
+      "Implemented CNNs for image classification baselines",
+      "Explored sequence models and modern transformer patterns",
+      "Documented training setups, metrics, and failure modes",
+    ],
+    stack: ["PyTorch", "TensorFlow", "CNN", "RNN", "Transformers"],
   },
   {
-    title: "Taqdeer-e-Naw",
-    blurb:
-      "NGO site and impact dashboard — stories for donors, numbers for the team.",
-    tags: ["React", "Analytics"],
-    category: "Web + Data",
-    date: "Jul ’25",
-    note: "Community · product",
+    title: "Taqdeer-e-Naw Platform",
+    role: "Full-stack + analytics",
+    category: "Web product",
+    date: "2025",
+    summary:
+      "NGO website with an analytics dashboard for community impact measurement and clearer donor communication.",
+    impact: [
+      "Shipped responsive public site for program visibility",
+      "Built dashboard views for engagement and impact metrics",
+      "Connected storytelling content to measurable outcomes",
+    ],
+    stack: ["React", "Data visualization", "Analytics", "UI"],
+  },
+  {
+    title: "TagPlugin",
+    role: "Sole builder",
+    category: "Intelligent systems",
+    date: "2024",
+    summary:
+      "Java plugin architecture for Minecraft with rule- and model-assisted tagging to automate gameplay systems and reduce manual configuration.",
+    impact: [
+      "Designed modular plugin structure against the game API",
+      "Applied ML-inspired heuristics for smarter tag behavior",
+      "Automated workflows that previously required hand tuning",
+    ],
+    stack: ["Java", "Plugin API", "Systems design", "Automation"],
   },
 ];
 
-/** How many px of each older page stay visible at the top of the pile */
-const EDGE = 22;
-/** Where the first page sticks */
+const EDGE = 24;
 const STICK_TOP = 88;
 
-/**
- * True diary pile:
- * - All pages share ONE parent (so sticky never “releases” early)
- * - Each page sticks a bit lower → only a thin strip of older pages shows
- * - Older pages do NOT scroll away or fade out while the stack is in view
- */
 const ProjectsSection = () => {
   const n = projects.length;
 
   return (
     <section id="work" className="border-t border-ink/[0.08] bg-paper">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pt-20 md:pt-28 pb-6">
-        <p className="section-index mb-3">02 — Work</p>
-        <h2 className="section-title max-w-lg">
-          Pages from the{" "}
-          <span className="italic text-terra">project diary</span>
-        </h2>
-        <p className="mt-4 max-w-md text-sm sm:text-base text-ink-mid leading-relaxed">
-          Scroll down — each page lands on the pile. Older entries stay, with just
-          their edge showing under the new one.
-        </p>
+      <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pt-20 md:pt-28 pb-8">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+          <div className="max-w-xl">
+            <p className="section-index mb-3">02 — Selected work</p>
+            <h2 className="section-title">
+              Projects with{" "}
+              <span className="italic text-terra">clear outcomes</span>
+            </h2>
+            <p className="mt-4 text-sm sm:text-base text-ink-mid leading-relaxed">
+              Case-style writeups — problem, approach, and what shipped. Scroll to
+              stack each card; earlier work stays as a visible page edge.
+            </p>
+          </div>
+          <p className="text-[12px] font-medium tracking-[0.14em] uppercase text-ink-mid shrink-0">
+            {n} featured builds
+          </p>
+        </div>
       </div>
 
-      {/*
-        Shared parent for every sticky page.
-        margin-bottom on each page = scroll room before the next one covers it.
-        top: STICK_TOP + i * EDGE  →  stacked edges like a real notebook.
-      */}
       <div
-        className="relative mx-auto max-w-[34rem] px-5 sm:px-6"
-        style={{
-          // Extra bottom space so the full pile can sit before section ends
-          paddingBottom: `calc(28vh + ${n * EDGE}px)`,
-        }}
+        className="relative mx-auto max-w-2xl px-5 sm:px-6"
+        style={{ paddingBottom: `calc(24vh + ${n * EDGE}px)` }}
       >
-        {/* faint notebook binding behind the pile */}
-        <div
-          className="pointer-events-none absolute left-[1.35rem] top-0 bottom-24 w-px bg-terra/20 sm:left-[1.6rem]"
-          aria-hidden
-        />
-
         {projects.map((p, i) => {
           const isLast = i === n - 1;
-          // Space to scroll while this page is on top before next covers it
-          const scrollRun = isLast ? 0 : "55vh";
-
           return (
             <div
               key={p.title}
@@ -115,94 +127,81 @@ const ProjectsSection = () => {
               style={{
                 top: STICK_TOP + i * EDGE,
                 zIndex: i + 1,
-                marginBottom: scrollRun,
+                marginBottom: isLast ? 0 : "52vh",
               }}
             >
               <article
-                className="diary-page"
+                className="relative overflow-hidden rounded-2xl border border-ink/[0.1] bg-page shadow-[0_24px_60px_-28px_rgba(40,20,8,0.45)]"
                 style={{
-                  // Tiny permanent tilt so the pile feels physical (not animated away)
-                  transform: `rotate(${(i % 2 === 0 ? -0.35 : 0.4)}deg)`,
+                  transform: `rotate(${i % 2 === 0 ? -0.25 : 0.3}deg)`,
                 }}
               >
-                {/* punch holes */}
+                {/* stack edge label */}
                 <div
-                  className="absolute left-[0.85rem] top-12 bottom-12 z-10 flex flex-col justify-between py-1"
+                  className="absolute inset-x-0 top-0 h-6 flex items-center justify-between px-5 bg-gradient-to-b from-paper/90 to-transparent pointer-events-none"
                   aria-hidden
                 >
-                  {[0, 1, 2, 3, 4].map((h) => (
-                    <span
-                      key={h}
-                      className="block h-2.5 w-2.5 rounded-full bg-paper shadow-[inset_0_1px_2px_rgba(0,0,0,0.15)] ring-1 ring-ink/10"
-                    />
-                  ))}
-                </div>
-
-                {/* edge tab — the strip you still see when buried under later pages */}
-                <div
-                  className="absolute inset-x-0 top-0 h-[22px] flex items-center justify-between px-12 sm:px-14 pointer-events-none"
-                  aria-hidden
-                >
-                  <span className="text-[10px] font-semibold tracking-[0.18em] uppercase text-terra/80 truncate">
+                  <span className="text-[10px] font-semibold tracking-[0.16em] uppercase text-terra/80 truncate">
                     {p.title}
                   </span>
-                  <span className="font-display text-[11px] text-ink-mid/70 tabular-nums">
-                    {String(i + 1).padStart(2, "0")}
+                  <span className="text-[10px] tabular-nums text-ink-mid/70">
+                    {String(i + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}
                   </span>
                 </div>
 
-                <div className="relative pl-12 pr-6 sm:pr-8 pt-9 pb-7 sm:pl-14">
-                  <div className="mb-4 flex items-start justify-between gap-3 border-b border-terra/20 pb-3">
+                {/* accent bar */}
+                <div className="h-1 w-full bg-gradient-to-r from-terra via-terra/70 to-clay" />
+
+                <div className="p-5 sm:p-7 pt-7">
+                  <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
                     <div>
-                      <p className="text-[10px] font-semibold tracking-[0.22em] uppercase text-terra">
-                        {p.category}
-                      </p>
-                      <p className="mt-1 text-[11px] text-ink-mid italic font-display">
-                        {p.note}
-                      </p>
-                    </div>
-                    <div className="text-right shrink-0">
-                      <p className="font-display text-sm text-ink-mid">{p.date}</p>
-                      <p className="text-[10px] tracking-wider text-ink-mid/70 mt-0.5">
-                        ENTRY {String(i + 1).padStart(2, "0")}
-                      </p>
-                    </div>
-                  </div>
-
-                  <h3 className="font-display text-[1.85rem] sm:text-[2.15rem] leading-[1.15] tracking-tight text-ink pr-2">
-                    {p.title}
-                  </h3>
-
-                  <p className="mt-3 text-[14px] sm:text-[15px] leading-[1.75] text-ink-mid">
-                    {p.blurb}
-                  </p>
-
-                  <div className="mt-6 flex flex-wrap items-end justify-between gap-3">
-                    <div className="flex flex-wrap gap-1.5">
-                      {p.tags.map((t) => (
-                        <span
-                          key={t}
-                          className="border border-dashed border-ink/15 bg-paper/40 px-2 py-0.5 text-[11px] font-medium text-ink-mid"
-                        >
-                          {t}
+                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                        <span className="rounded-full bg-terra/10 px-2.5 py-0.5 text-[11px] font-semibold text-terra">
+                          {p.category}
                         </span>
-                      ))}
+                        <span className="text-[12px] text-ink-mid">{p.role}</span>
+                      </div>
+                      <h3 className="font-display text-[1.75rem] sm:text-[2rem] tracking-tight text-ink leading-tight">
+                        {p.title}
+                      </h3>
                     </div>
-                    <span className="font-display italic text-sm text-terra/80">
-                      — M.A.
+                    <span className="font-display text-sm text-ink-mid tabular-nums">
+                      {p.date}
                     </span>
                   </div>
-                </div>
 
-                {/* paper thickness under page */}
-                <div
-                  className="pointer-events-none absolute -bottom-[3px] left-3 right-4 h-[3px] rounded-b-sm bg-ink/[0.05]"
-                  aria-hidden
-                />
-                <div
-                  className="pointer-events-none absolute -bottom-[6px] left-5 right-6 h-[3px] rounded-b-sm bg-ink/[0.035]"
-                  aria-hidden
-                />
+                  <p className="text-[14px] sm:text-[15px] leading-relaxed text-ink-mid">
+                    {p.summary}
+                  </p>
+
+                  <div className="mt-5">
+                    <p className="text-[10px] font-semibold tracking-[0.18em] uppercase text-ink-mid mb-2.5">
+                      What I did
+                    </p>
+                    <ul className="space-y-2">
+                      {p.impact.map((line) => (
+                        <li
+                          key={line}
+                          className="flex gap-2.5 text-[13px] sm:text-[14px] text-ink leading-snug"
+                        >
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-terra" />
+                          {line}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-6 flex flex-wrap gap-1.5 pt-4 border-t border-ink/[0.07]">
+                    {p.stack.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-full border border-ink/10 bg-paper/70 px-2.5 py-1 text-[11px] font-medium text-ink-mid"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </article>
             </div>
           );

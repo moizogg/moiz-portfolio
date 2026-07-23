@@ -1,19 +1,40 @@
 import React from "react";
-import { ArrowDownRight, BookOpen, Sparkles, MapPin, GraduationCap } from "lucide-react";
+import {
+  ArrowDownRight,
+  ArrowUpRight,
+  MapPin,
+  GraduationCap,
+  Brain,
+  LineChart,
+  Code2,
+  Activity,
+} from "lucide-react";
 
 const focusAreas = [
   "Machine Learning",
   "Deep Learning",
-  "Data Viz",
   "NLP",
+  "Data Analysis",
   "Python",
-  "Statistics",
+  "React",
 ];
 
-const recentPages = [
-  { title: "MoodBloom", tag: "NLP", n: "02" },
-  { title: "HomeCalc", tag: "ML", n: "03" },
-  { title: "TagPlugin", tag: "AI", n: "01" },
+const highlightCases = [
+  {
+    title: "MoodBloom",
+    domain: "NLP · Product",
+    result: "Emotion signals → actionable wellness insights",
+  },
+  {
+    title: "HomeCalc",
+    domain: "Forecasting · ML",
+    result: "Spend history → monthly budget predictions",
+  },
+  {
+    title: "Impact dashboard",
+    domain: "Web · Analytics",
+    result: "NGO data → donor-ready metrics",
+  },
 ];
 
 const HeroSection = () => {
@@ -22,99 +43,106 @@ const HeroSection = () => {
       id="home"
       className="relative min-h-[100svh] bg-paper pt-[4.25rem] overflow-hidden"
     >
-      {/* soft ambient shapes — fills void without two-tone split */}
       <div
-        className="pointer-events-none absolute -right-20 top-24 h-72 w-72 rounded-full opacity-40"
+        className="pointer-events-none absolute -right-24 top-20 h-80 w-80 rounded-full opacity-50"
         style={{
           background:
-            "radial-gradient(circle, hsl(16 45% 55% / 0.18), transparent 70%)",
-        }}
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute left-[-10%] bottom-10 h-64 w-64 rounded-full opacity-30"
-        style={{
-          background:
-            "radial-gradient(circle, hsl(28 40% 50% / 0.15), transparent 70%)",
+            "radial-gradient(circle, hsl(16 45% 50% / 0.16), transparent 68%)",
         }}
         aria-hidden
       />
 
-      <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 py-14 sm:py-18 lg:py-20">
-        {/* top meta */}
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 py-14 sm:py-16 lg:py-20">
         <div className="mb-10 sm:mb-12 flex flex-wrap items-center gap-x-4 gap-y-2">
-          <span className="section-index">Portfolio · 26</span>
+          <span className="section-index">Portfolio · 2026</span>
           <span className="hidden sm:block h-px w-10 bg-ink/15" />
           <span className="inline-flex items-center gap-1.5 text-[13px] text-ink-mid">
             <MapPin size={13} className="text-terra" />
             Multan, Pakistan
           </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-page/90 px-3 py-1 text-[12px] font-medium text-ink-mid">
-            <span className="h-1.5 w-1.5 rounded-full bg-terra animate-pulse" />
-            Open for internships
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-terra/25 bg-terra/[0.08] px-3 py-1 text-[12px] font-semibold text-terra">
+            <span className="h-1.5 w-1.5 rounded-full bg-terra" />
+            Open to internships
           </span>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-start">
-          {/* ── Left: voice ── */}
-          <div className="lg:col-span-7">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-12 items-start">
+          {/* Left */}
+          <div className="lg:col-span-6 xl:col-span-7">
+            <p className="mb-4 text-[13px] font-medium tracking-[0.14em] uppercase text-ink-mid">
+              Data science · AI · applied ML
+            </p>
+
             <h1 className="font-display font-medium tracking-[-0.035em] leading-[0.96] text-ink">
-              <span className="block text-[clamp(2.75rem,8vw,5.75rem)]">
+              <span className="block text-[clamp(2.75rem,7.5vw,5.5rem)]">
                 Moiz Amjad
               </span>
-              <span className="mt-2 sm:mt-3 block text-[clamp(1.85rem,5.5vw,3.5rem)] text-ink-mid font-normal">
-                builds with{" "}
-                <em className="not-italic font-medium italic text-terra">data</em>
-                {" "}&amp;{" "}
-                <em className="not-italic font-medium italic text-ink">AI</em>
+              <span className="mt-3 block max-w-xl text-[clamp(1.45rem,3.8vw,2.35rem)] font-normal text-ink-mid leading-[1.2]">
+                Building systems that turn{" "}
+                <em className="not-italic font-medium italic text-terra">
+                  raw data
+                </em>{" "}
+                into decisions teams can trust.
               </span>
             </h1>
 
-            <p className="mt-7 max-w-md text-base sm:text-lg leading-relaxed text-ink-mid">
-              Aspiring data scientist. Models, notebooks, and products that turn
-              messy signals into decisions you can trust.
+            <p className="mt-7 max-w-lg text-[15px] sm:text-base leading-relaxed text-ink-mid">
+              Student developer focused on machine learning, analytics, and
+              shipping clean interfaces around the models. Strong on Python
+              tooling, careful evaluation, and products that stay usable outside
+              a notebook.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a href="#work" className="btn-terra">
-                See projects
+                View selected work
                 <ArrowDownRight size={16} strokeWidth={2.25} />
               </a>
               <a href="#contact" className="btn-ghost">
-                Contact
+                Get in touch
+              </a>
+              <a
+                href="https://github.com/Moiz7865"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm font-medium text-ink-mid hover:text-ink transition-colors px-2"
+              >
+                GitHub
+                <ArrowUpRight size={14} />
               </a>
             </div>
 
-            {/* stats as filled tiles */}
             <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl">
               {[
-                { v: "6+", l: "Projects" },
-                { v: "2Y+", l: "Building" },
-                { v: "17", l: "Years old" },
-                { v: "BH", l: "Beaconhouse" },
+                { v: "6+", l: "Shipped projects", icon: Code2 },
+                { v: "2+", l: "Years building", icon: Activity },
+                { v: "ML + Web", l: "End-to-end stack", icon: Brain },
+                { v: "Beaconhouse", l: "Multan", icon: GraduationCap },
               ].map((s) => (
                 <div
                   key={s.l}
-                  className="rounded-xl border border-ink/[0.08] bg-page/70 px-3 py-3.5"
+                  className="rounded-2xl border border-ink/[0.08] bg-page/90 p-3.5 shadow-[0_8px_24px_-18px_rgba(40,20,8,0.35)]"
                 >
-                  <p className="font-display text-2xl sm:text-3xl text-ink tracking-tight leading-none">
+                  <s.icon size={15} className="text-terra mb-2.5" />
+                  <p className="font-display text-xl sm:text-2xl text-ink tracking-tight leading-none">
                     {s.v}
                   </p>
-                  <p className="mt-1.5 text-[11px] text-ink-mid">{s.l}</p>
+                  <p className="mt-1.5 text-[11px] leading-snug text-ink-mid">
+                    {s.l}
+                  </p>
                 </div>
               ))}
             </div>
 
-            {/* focus tags */}
             <div className="mt-8">
               <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-ink-mid mb-3">
-                Focus
+                Core focus
               </p>
               <div className="flex flex-wrap gap-2">
                 {focusAreas.map((f) => (
                   <span
                     key={f}
-                    className="rounded-full border border-ink/10 bg-page/80 px-3 py-1.5 text-[12px] font-medium text-ink-mid"
+                    className="rounded-full border border-ink/10 bg-page px-3 py-1.5 text-[12px] font-medium text-ink shadow-sm"
                   >
                     {f}
                   </span>
@@ -123,98 +151,118 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* ── Right: populated cluster ── */}
-          <div className="lg:col-span-5 relative">
-            {/* large watermark number */}
-            <span
-              className="pointer-events-none absolute -right-2 -top-6 font-display text-[8rem] sm:text-[10rem] leading-none text-ink/[0.05] select-none"
-              aria-hidden
-            >
-              06
-            </span>
-
-            <div className="relative space-y-4">
-              {/* Now reading / building */}
-              <div className="relative z-20 rounded-2xl border border-ink/[0.08] bg-page p-5 shadow-[0_16px_40px_-24px_rgba(60,30,10,0.35)]">
-                <div className="flex items-center gap-2 text-terra mb-3">
-                  <Sparkles size={15} />
-                  <span className="text-[11px] font-semibold tracking-[0.16em] uppercase">
-                    Right now
+          {/* Right — elevated cards */}
+          <div className="lg:col-span-6 xl:col-span-5">
+            <div className="space-y-3.5">
+              {/* Status card */}
+              <div className="rounded-2xl border border-ink/[0.08] bg-page p-5 sm:p-6 shadow-[0_20px_50px_-28px_rgba(40,20,8,0.4)]">
+                <div className="flex items-center justify-between gap-3 mb-4">
+                  <div className="flex items-center gap-2">
+                    <span className="grid h-8 w-8 place-items-center rounded-xl bg-terra/10 text-terra">
+                      <LineChart size={16} />
+                    </span>
+                    <div>
+                      <p className="text-[11px] font-semibold tracking-[0.16em] uppercase text-terra">
+                        Currently
+                      </p>
+                      <p className="text-sm font-medium text-ink">
+                        Building applied ML skills
+                      </p>
+                    </div>
+                  </div>
+                  <span className="rounded-full bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold text-emerald-700">
+                    Active
                   </span>
                 </div>
-                <p className="font-display text-xl text-ink leading-snug">
-                  Deepening ML foundations &amp; shipping small intelligent tools.
+                <p className="text-sm leading-relaxed text-ink-mid">
+                  Deepening model evaluation, feature work, and full-stack
+                  delivery — looking for internships where data science meets
+                  product impact.
                 </p>
-                <p className="mt-2 text-sm text-ink-mid leading-relaxed">
-                  Looking for internships where data work meets real product.
-                </p>
-              </div>
-
-              {/* Stacked mini diary previews — ties to work section */}
-              <div className="relative z-10 h-[200px] sm:h-[220px]">
-                {recentPages.map((page, i) => (
-                  <div
-                    key={page.title}
-                    className="diary-page absolute left-0 right-4 sm:right-6 p-4"
-                    style={{
-                      top: i * 28,
-                      zIndex: 3 - i,
-                      transform: `rotate(${(i - 1) * 2.2}deg)`,
-                      width: "92%",
-                      marginLeft: i * 6,
-                    }}
-                  >
-                    <div className="flex items-center justify-between mb-2 pl-6">
-                      <span className="text-[10px] font-semibold tracking-wider uppercase text-terra">
-                        {page.tag}
-                      </span>
-                      <span className="font-display text-xs text-ink-mid">
-                        {page.n}
-                      </span>
-                    </div>
-                    <p className="font-display text-lg text-ink pl-6 leading-tight">
-                      {page.title}
-                    </p>
-                    {i === 0 && (
-                      <p className="mt-1 pl-6 text-[12px] text-ink-mid">
-                        Latest entry in the project diary →
+                <div className="mt-4 grid grid-cols-3 gap-2">
+                  {[
+                    ["Python", "Primary"],
+                    ["ML stack", "Scikit / TF"],
+                    ["Product", "React + APIs"],
+                  ].map(([k, v]) => (
+                    <div
+                      key={k}
+                      className="rounded-xl bg-paper/80 border border-ink/[0.06] px-2.5 py-2"
+                    >
+                      <p className="text-[10px] uppercase tracking-wider text-ink-mid">
+                        {k}
                       </p>
-                    )}
-                  </div>
-                ))}
+                      <p className="mt-0.5 text-[12px] font-semibold text-ink">
+                        {v}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              {/* school + role chips row */}
-              <div className="grid grid-cols-2 gap-3 relative z-20">
-                <div className="rounded-xl border border-ink/[0.08] bg-page/90 p-4">
+              {/* Featured case cards */}
+              <div className="rounded-2xl border border-ink/[0.08] bg-page overflow-hidden shadow-[0_16px_40px_-24px_rgba(40,20,8,0.35)]">
+                <div className="flex items-center justify-between px-5 py-3.5 border-b border-ink/[0.06] bg-paper/50">
+                  <p className="text-[11px] font-semibold tracking-[0.16em] uppercase text-ink-mid">
+                    Selected highlights
+                  </p>
+                  <a
+                    href="#work"
+                    className="text-[12px] font-medium text-terra hover:underline"
+                  >
+                    All work →
+                  </a>
+                </div>
+                <ul className="divide-y divide-ink/[0.06]">
+                  {highlightCases.map((c, i) => (
+                    <li
+                      key={c.title}
+                      className="flex gap-3 px-5 py-3.5 hover:bg-paper/40 transition-colors"
+                    >
+                      <span className="font-display text-sm text-terra/70 tabular-nums pt-0.5">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-0.5">
+                          <p className="font-semibold text-ink text-[15px]">
+                            {c.title}
+                          </p>
+                          <p className="text-[11px] text-ink-mid">{c.domain}</p>
+                        </div>
+                        <p className="mt-0.5 text-[13px] text-ink-mid leading-snug">
+                          {c.result}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Profile strip */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="rounded-2xl border border-ink/[0.08] bg-page p-4 shadow-sm">
                   <GraduationCap size={16} className="text-terra mb-2" />
-                  <p className="text-[11px] uppercase tracking-wider text-ink-mid">
-                    School
+                  <p className="text-[10px] uppercase tracking-[0.16em] text-ink-mid">
+                    Education
                   </p>
-                  <p className="mt-0.5 font-display text-base text-ink leading-snug">
-                    Beaconhouse
+                  <p className="mt-1 font-display text-lg text-ink leading-snug">
+                    Beaconhouse School
                   </p>
+                  <p className="text-[12px] text-ink-mid mt-0.5">Multan · Student</p>
                 </div>
-                <div className="rounded-xl border border-ink/[0.08] bg-page/90 p-4">
-                  <BookOpen size={16} className="text-terra mb-2" />
-                  <p className="text-[11px] uppercase tracking-wider text-ink-mid">
-                    Path
+                <div className="rounded-2xl border border-ink/[0.08] bg-ink text-paper p-4 shadow-sm">
+                  <Brain size={16} className="text-clay mb-2" />
+                  <p className="text-[10px] uppercase tracking-[0.16em] text-paper/55">
+                    Seeking
                   </p>
-                  <p className="mt-0.5 font-display text-base text-ink leading-snug">
-                    Data · AI · ML
+                  <p className="mt-1 font-display text-lg leading-snug">
+                    DS / ML internship
+                  </p>
+                  <p className="text-[12px] text-paper/60 mt-0.5">
+                    Remote or on-site
                   </p>
                 </div>
               </div>
-
-              {/* quote strip */}
-              <blockquote className="rounded-xl border border-dashed border-terra/25 bg-terra/[0.06] px-4 py-3.5">
-                <p className="font-display italic text-[15px] sm:text-base text-ink leading-snug">
-                  “Find the pattern. Prove it. Ship something useful.”
-                </p>
-                <footer className="mt-2 text-[11px] tracking-wide text-ink-mid">
-                  — working note
-                </footer>
-              </blockquote>
             </div>
           </div>
         </div>
