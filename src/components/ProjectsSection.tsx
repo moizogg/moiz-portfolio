@@ -114,20 +114,17 @@ const ProjectsSection = () => {
         </div>
       </div>
 
-      <div
-        className="relative mx-auto max-w-2xl px-5 sm:px-6"
-        style={{ paddingBottom: `calc(24vh + ${n * EDGE}px)` }}
-      >
-        {projects.map((p, i) => {
-          const isLast = i === n - 1;
-          return (
+      <div className="relative mx-auto max-w-2xl px-5 sm:px-6">
+        {projects.map((p, i) => (
             <div
               key={p.title}
               className="sticky"
               style={{
+                // Same stick math for every page (incl. last) so it rises into the pile
                 top: STICK_TOP + i * EDGE,
                 zIndex: i + 1,
-                marginBottom: isLast ? 0 : "52vh",
+                // Scroll runway for ALL cards — last one used to have 0 and never joined the motion
+                marginBottom: "55vh",
               }}
             >
               <article
@@ -193,8 +190,17 @@ const ProjectsSection = () => {
                 </div>
               </article>
             </div>
-          );
-        })}
+        ))}
+
+        {/*
+          Release lane: after the last page settles on the pile,
+          this empty space lets the whole stack unstick and scroll up together.
+        */}
+        <div
+          className="pointer-events-none w-full"
+          style={{ height: `calc(45vh + ${n * EDGE}px)` }}
+          aria-hidden
+        />
       </div>
     </section>
   );
