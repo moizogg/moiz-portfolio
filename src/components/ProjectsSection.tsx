@@ -1,182 +1,214 @@
+import React from "react";
 
-import React from 'react';
-import { ExternalLink, Github, Activity, Zap } from 'lucide-react';
-import Layout from './Layout';
+const projects = [
+  {
+    title: "TagPlugin",
+    blurb:
+      "AI-enhanced Minecraft systems — intelligent tags, automated play, a little chaos tamed by ML.",
+    tags: ["Java", "AI/ML", "API"],
+    category: "AI Development",
+    date: "Mar ’24",
+    note: "Lab · game systems",
+  },
+  {
+    title: "MoodBloom",
+    blurb:
+      "Journaling that listens. NLP maps mood over time and returns quiet, useful insights.",
+    tags: ["Python", "NLP"],
+    category: "AI Application",
+    date: "Jun ’24",
+    note: "Wellness · language",
+  },
+  {
+    title: "HomeCalc",
+    blurb:
+      "Predict next month’s household spend before the surprise. Patterns over panic.",
+    tags: ["Python", "Sklearn"],
+    category: "Predictive",
+    date: "Sep ’24",
+    note: "Budget · forecast",
+  },
+  {
+    title: "DS Internship",
+    blurb:
+      "EDA, models, and charts that had to be clear enough for non-technical stakeholders.",
+    tags: ["Pandas", "Viz"],
+    category: "Data Science",
+    date: "Jan ’25",
+    note: "Industry · delivery",
+  },
+  {
+    title: "Deep Learning",
+    blurb:
+      "Notebooks on vision, recsys, and language — experiments with receipts, not vibes.",
+    tags: ["PyTorch", "TF"],
+    category: "Research",
+    date: "Apr ’25",
+    note: "Models · experiments",
+  },
+  {
+    title: "Taqdeer-e-Naw",
+    blurb:
+      "NGO site and impact dashboard — stories for donors, numbers for the team.",
+    tags: ["React", "Analytics"],
+    category: "Web + Data",
+    date: "Jul ’25",
+    note: "Community · product",
+  },
+];
 
+/** How many px of each older page stay visible at the top of the pile */
+const EDGE = 22;
+/** Where the first page sticks */
+const STICK_TOP = 88;
+
+/**
+ * True diary pile:
+ * - All pages share ONE parent (so sticky never “releases” early)
+ * - Each page sticks a bit lower → only a thin strip of older pages shows
+ * - Older pages do NOT scroll away or fade out while the stack is in view
+ */
 const ProjectsSection = () => {
-  const projects = [
-    {
-      title: "TagPlugin",
-      description: "AI-enhanced Minecraft plugin that uses machine learning algorithms to create intelligent tag-based systems and automated gameplay features.",
-      tech: ["Java", "AI/ML", "Minecraft API"],
-      category: "AI Development"
-    },
-    {
-      title: "MoodBloom",
-      description: "AI-powered mood detection and journaling application that analyzes emotional patterns and provides personalized insights for mental wellness.",
-      tech: ["Python", "NLP", "Emotion AI"],
-      category: "AI Application"
-    },
-    {
-      title: "HomeCalc",
-      description: "Intelligent household expense predictor using machine learning to forecast monthly budgets and optimize spending patterns.",
-      tech: ["Python", "Scikit-learn", "Data Analysis"],
-      category: "Predictive Analytics"
-    },
-    {
-      title: "Data Science Internship",
-      description: "Comprehensive project involving exploratory data analysis, predictive modeling, and advanced data visualization for business insights.",
-      tech: ["Python", "Pandas", "Matplotlib", "Seaborn"],
-      category: "Data Science"
-    },
-    {
-      title: "Deep Learning Experiments",
-      description: "Collection of neural network implementations including image classification, recommendation systems, and natural language processing models.",
-      tech: ["TensorFlow", "PyTorch", "CNN", "RNN"],
-      category: "Deep Learning"
-    },
-    {
-      title: "Taqdeer-e-Naw Website",
-      description: "NGO website with integrated data analytics dashboard providing actionable insights for community impact measurement and donor engagement.",
-      tech: ["React", "Data Visualization", "Analytics"],
-      category: "Web Development"
-    }
-  ];
+  const n = projects.length;
 
   return (
-    <Layout 
-      backgroundDensity="medium" 
-      className="section-padding bg-black"
-    >
-      <section id="projects" className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="section-title text-gradient font-orbitron">FEATURED_PROJECTS</h2>
-          <p className="section-subtitle font-rajdhani">
-            Exploring the boundaries of AI, ML, and Data Science through advanced robotic solutions
-          </p>
-        </div>
+    <section id="work" className="border-t border-ink/[0.08] bg-paper">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 pt-20 md:pt-28 pb-6">
+        <p className="section-index mb-3">02 — Work</p>
+        <h2 className="section-title max-w-lg">
+          Pages from the{" "}
+          <span className="italic text-terra">project diary</span>
+        </h2>
+        <p className="mt-4 max-w-md text-sm sm:text-base text-ink-mid leading-relaxed">
+          Scroll down — each page lands on the pile. Older entries stay, with just
+          their edge showing under the new one.
+        </p>
+      </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div key={index} className="relative group animate-float-gentle" style={{ animationDelay: `${index * 0.5}s` }}>
-              {/* Holographic Card Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-green-primary/20 via-green-accent/10 to-green-secondary/5 rounded-2xl blur-xl transform rotate-1 scale-105 opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-tl from-green-accent/15 via-transparent to-green-primary/10 rounded-2xl blur-lg transform -rotate-1 scale-102 opacity-30 group-hover:opacity-60 transition-opacity duration-500" />
-              
-              {/* Main Project Card */}
-              <div className="neural-card">
-                
-                {/* Card Header */}
-                <div className="bg-gradient-to-r from-green-primary/20 to-green-accent/15 border-b border-green-accent/30 p-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-green-accent rounded-full animate-neural-pulse" />
-                      <span className="text-green-accent font-orbitron text-xs">{project.category.toUpperCase()}</span>
-                    </div>
-                    <div className="flex space-x-1">
-                      <div className="w-1 h-1 bg-red-500/80 rounded-full" />
-                      <div className="w-1 h-1 bg-yellow-500/80 rounded-full" />
-                      <div className="w-1 h-1 bg-green-accent rounded-full animate-neural-pulse" />
-                    </div>
-                  </div>
+      {/*
+        Shared parent for every sticky page.
+        margin-bottom on each page = scroll room before the next one covers it.
+        top: STICK_TOP + i * EDGE  →  stacked edges like a real notebook.
+      */}
+      <div
+        className="relative mx-auto max-w-[34rem] px-5 sm:px-6"
+        style={{
+          // Extra bottom space so the full pile can sit before section ends
+          paddingBottom: `calc(28vh + ${n * EDGE}px)`,
+        }}
+      >
+        {/* faint notebook binding behind the pile */}
+        <div
+          className="pointer-events-none absolute left-[1.35rem] top-0 bottom-24 w-px bg-terra/20 sm:left-[1.6rem]"
+          aria-hidden
+        />
+
+        {projects.map((p, i) => {
+          const isLast = i === n - 1;
+          // Space to scroll while this page is on top before next covers it
+          const scrollRun = isLast ? 0 : "55vh";
+
+          return (
+            <div
+              key={p.title}
+              className="sticky"
+              style={{
+                top: STICK_TOP + i * EDGE,
+                zIndex: i + 1,
+                marginBottom: scrollRun,
+              }}
+            >
+              <article
+                className="diary-page"
+                style={{
+                  // Tiny permanent tilt so the pile feels physical (not animated away)
+                  transform: `rotate(${(i % 2 === 0 ? -0.35 : 0.4)}deg)`,
+                }}
+              >
+                {/* punch holes */}
+                <div
+                  className="absolute left-[0.85rem] top-12 bottom-12 z-10 flex flex-col justify-between py-1"
+                  aria-hidden
+                >
+                  {[0, 1, 2, 3, 4].map((h) => (
+                    <span
+                      key={h}
+                      className="block h-2.5 w-2.5 rounded-full bg-paper shadow-[inset_0_1px_2px_rgba(0,0,0,0.15)] ring-1 ring-ink/10"
+                    />
+                  ))}
                 </div>
 
-                {/* Card Content */}
-                <div className="p-6 relative">
-                  {/* Holographic Data Stream */}
-                  <div className="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-green-accent/50 via-transparent to-green-accent/50 animate-pulse" />
-                  
-                  <div className="mb-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-xl font-bold text-white group-hover:text-green-accent transition-colors font-orbitron tracking-wide">
-                        {project.title.toUpperCase()}
-                      </h3>
-                      <div className="flex items-center space-x-1">
-                        <div className="w-2 h-2 bg-green-accent rounded-full animate-neural-pulse" />
-                        <span className="text-green-accent text-xs font-orbitron">ONLINE</span>
-                      </div>
-                    </div>
-                    
-                    {/* Project ID */}
-                    <div className="flex items-center space-x-2 mb-3">
-                      <span className="text-gray-500 text-xs font-orbitron">PROJECT_ID:</span>
-                      <span className="text-green-accent text-xs font-orbitron">#{(index + 1).toString().padStart(3, '0')}</span>
-                    </div>
-                    
-                    <p className="text-gray-300 leading-relaxed mb-4 font-rajdhani">
-                      {project.description}
-                    </p>
-                  </div>
+                {/* edge tab — the strip you still see when buried under later pages */}
+                <div
+                  className="absolute inset-x-0 top-0 h-[22px] flex items-center justify-between px-12 sm:px-14 pointer-events-none"
+                  aria-hidden
+                >
+                  <span className="text-[10px] font-semibold tracking-[0.18em] uppercase text-terra/80 truncate">
+                    {p.title}
+                  </span>
+                  <span className="font-display text-[11px] text-ink-mid/70 tabular-nums">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
 
-                  {/* Performance Metrics */}
-                  <div className="mb-4 p-3 bg-green-primary/5 border border-green-accent/20 rounded-lg">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-green-accent text-xs font-orbitron">PERFORMANCE</span>
-                      <span className="text-green-accent text-xs font-orbitron">{Math.floor(Math.random() * 20) + 80}%</span>
+                <div className="relative pl-12 pr-6 sm:pr-8 pt-9 pb-7 sm:pl-14">
+                  <div className="mb-4 flex items-start justify-between gap-3 border-b border-terra/20 pb-3">
+                    <div>
+                      <p className="text-[10px] font-semibold tracking-[0.22em] uppercase text-terra">
+                        {p.category}
+                      </p>
+                      <p className="mt-1 text-[11px] text-ink-mid italic font-display">
+                        {p.note}
+                      </p>
                     </div>
-                    <div className="w-full h-1 bg-gray-800 rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-gradient-to-r from-green-primary to-green-accent rounded-full animate-pulse"
-                        style={{ width: `${Math.floor(Math.random() * 20) + 80}%` }}
-                      />
+                    <div className="text-right shrink-0">
+                      <p className="font-display text-sm text-ink-mid">{p.date}</p>
+                      <p className="text-[10px] tracking-wider text-ink-mid/70 mt-0.5">
+                        ENTRY {String(i + 1).padStart(2, "0")}
+                      </p>
                     </div>
                   </div>
 
-                  {/* Tech Stack */}
-                  <div className="mb-6">
-                    <div className="flex items-center space-x-2 mb-3">
-                      <div className="w-3 h-3 bg-green-accent/30 rounded-full animate-pulse" />
-                      <span className="text-green-accent text-xs font-orbitron tracking-wider">TECH_STACK</span>
-                      <div className="flex-1 h-px bg-gradient-to-r from-green-accent/50 to-transparent" />
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, techIndex) => (
+                  <h3 className="font-display text-[1.85rem] sm:text-[2.15rem] leading-[1.15] tracking-tight text-ink pr-2">
+                    {p.title}
+                  </h3>
+
+                  <p className="mt-3 text-[14px] sm:text-[15px] leading-[1.75] text-ink-mid">
+                    {p.blurb}
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap items-end justify-between gap-3">
+                    <div className="flex flex-wrap gap-1.5">
+                      {p.tags.map((t) => (
                         <span
-                          key={techIndex}
-                          className="px-3 py-1 bg-green-primary/15 border border-green-accent/30 text-green-accent text-xs rounded-full font-medium transition-all duration-300 hover:bg-green-accent/20 hover:scale-105 font-orbitron"
+                          key={t}
+                          className="border border-dashed border-ink/15 bg-paper/40 px-2 py-0.5 text-[11px] font-medium text-ink-mid"
                         >
-                          {tech.toUpperCase()}
+                          {t}
                         </span>
                       ))}
                     </div>
-                  </div>
-
-                  {/* Project Status */}
-                  <div className="flex items-center justify-center pt-4 border-t border-green-accent/20">
-                    <div className="flex items-center space-x-1">
-                      <Activity className="text-green-accent animate-pulse" size={12} />
-                      <span className="text-green-accent text-xs font-orbitron">ACTIVE</span>
-                    </div>
+                    <span className="font-display italic text-sm text-terra/80">
+                      — M.A.
+                    </span>
                   </div>
                 </div>
 
-                {/* Status Bar */}
-                <div className="bg-gradient-to-r from-green-primary/10 to-green-accent/5 border-t border-green-accent/30 p-3">
-                  <div className="flex justify-between items-center text-xs">
-                    <div className="flex items-center space-x-3">
-                      <span className="text-green-accent font-orbitron">STATUS: DEPLOYED</span>
-                      <div className="flex items-center space-x-1">
-                        <Zap className="text-green-accent" size={10} />
-                        <span className="text-green-accent font-orbitron">OPTIMIZED</span>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <div className="w-1 h-1 bg-green-accent rounded-full animate-ping" />
-                      <span className="text-green-accent font-orbitron">LIVE</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Elements */}
-              <div className="absolute -top-3 -right-3 w-6 h-6 bg-gradient-to-r from-green-accent/40 to-green-primary/40 rounded-full animate-pulse blur-sm" />
-              <div className="absolute -bottom-3 -left-3 w-4 h-4 bg-green-accent/30 rounded-full animate-neural-pulse" />
-              <div className="absolute top-4 right-4 w-1 h-1 bg-green-accent rounded-full animate-ping" />
+                {/* paper thickness under page */}
+                <div
+                  className="pointer-events-none absolute -bottom-[3px] left-3 right-4 h-[3px] rounded-b-sm bg-ink/[0.05]"
+                  aria-hidden
+                />
+                <div
+                  className="pointer-events-none absolute -bottom-[6px] left-5 right-6 h-[3px] rounded-b-sm bg-ink/[0.035]"
+                  aria-hidden
+                />
+              </article>
             </div>
-          ))}
-        </div>
-      </section>
-    </Layout>
+          );
+        })}
+      </div>
+    </section>
   );
 };
 

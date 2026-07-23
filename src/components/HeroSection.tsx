@@ -1,289 +1,222 @@
+import React from "react";
+import { ArrowDownRight, BookOpen, Sparkles, MapPin, GraduationCap } from "lucide-react";
 
-import React from 'react';
-import { ChevronDown, Code, Database, Brain, Cpu, GitBranch, Terminal, MapPin, Calendar, GraduationCap, Zap, Star, Trophy, TrendingUp, Layers, Shield, Hexagon, Activity, Binary, Microchip, Network, Bot } from 'lucide-react';
-import TechBackground from './TechBackground';
+const focusAreas = [
+  "Machine Learning",
+  "Deep Learning",
+  "Data Viz",
+  "NLP",
+  "Python",
+  "Statistics",
+];
+
+const recentPages = [
+  { title: "MoodBloom", tag: "NLP", n: "02" },
+  { title: "HomeCalc", tag: "ML", n: "03" },
+  { title: "TagPlugin", tag: "AI", n: "01" },
+];
 
 const HeroSection = () => {
-  const techIcons = [
-    { icon: <Code size={20} />, delay: '0s' },
-    { icon: <Database size={18} />, delay: '0.5s' },
-    { icon: <Brain size={22} />, delay: '1s' },
-    { icon: <Cpu size={19} />, delay: '1.5s' },
-    { icon: <GitBranch size={17} />, delay: '2s' },
-    { icon: <Terminal size={21} />, delay: '2.5s' },
-  ];
-
   return (
-    <section id="home" className="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Enhanced Tech Background */}
-      <TechBackground density="medium" />
+    <section
+      id="home"
+      className="relative min-h-[100svh] bg-paper pt-[4.25rem] overflow-hidden"
+    >
+      {/* soft ambient shapes — fills void without two-tone split */}
+      <div
+        className="pointer-events-none absolute -right-20 top-24 h-72 w-72 rounded-full opacity-40"
+        style={{
+          background:
+            "radial-gradient(circle, hsl(16 45% 55% / 0.18), transparent 70%)",
+        }}
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute left-[-10%] bottom-10 h-64 w-64 rounded-full opacity-30"
+        style={{
+          background:
+            "radial-gradient(circle, hsl(28 40% 50% / 0.15), transparent 70%)",
+        }}
+        aria-hidden
+      />
 
-      {/* Optimized Animated Beams */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="hero-beam animate-beam-1 left-1/4 top-0" />
-        <div className="hero-beam animate-beam-2 right-1/3 top-0" />
-        <div className="hero-beam animate-beam-3 left-2/3 top-0" />
-      </div>
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12 py-14 sm:py-18 lg:py-20">
+        {/* top meta */}
+        <div className="mb-10 sm:mb-12 flex flex-wrap items-center gap-x-4 gap-y-2">
+          <span className="section-index">Portfolio · 26</span>
+          <span className="hidden sm:block h-px w-10 bg-ink/15" />
+          <span className="inline-flex items-center gap-1.5 text-[13px] text-ink-mid">
+            <MapPin size={13} className="text-terra" />
+            Multan, Pakistan
+          </span>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-page/90 px-3 py-1 text-[12px] font-medium text-ink-mid">
+            <span className="h-1.5 w-1.5 rounded-full bg-terra animate-pulse" />
+            Open for internships
+          </span>
+        </div>
 
-      {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-screen py-20">
-        {/* Left Side - Text Content */}
-        <div className="lg:col-span-7 text-left order-2 lg:order-1">
-          <div className="animate-fade-up">
-            <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-green-primary/20 border border-green-accent/30 rounded-full text-green-accent text-sm font-medium mb-4">
-                🚀 Available for Internships
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-start">
+          {/* ── Left: voice ── */}
+          <div className="lg:col-span-7">
+            <h1 className="font-display font-medium tracking-[-0.035em] leading-[0.96] text-ink">
+              <span className="block text-[clamp(2.75rem,8vw,5.75rem)]">
+                Moiz Amjad
               </span>
-            </div>
-            
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight font-orbitron">
-              Hello, I'm{' '}
-              <span className="text-gradient">Moiz</span>
+              <span className="mt-2 sm:mt-3 block text-[clamp(1.85rem,5.5vw,3.5rem)] text-ink-mid font-normal">
+                builds with{" "}
+                <em className="not-italic font-medium italic text-terra">data</em>
+                {" "}&amp;{" "}
+                <em className="not-italic font-medium italic text-ink">AI</em>
+              </span>
             </h1>
-            
-            <p className="text-xl md:text-2xl text-green-accent mb-6 font-semibold font-rajdhani">
-              Aspiring Data Scientist
+
+            <p className="mt-7 max-w-md text-base sm:text-lg leading-relaxed text-ink-mid">
+              Aspiring data scientist. Models, notebooks, and products that turn
+              messy signals into decisions you can trust.
             </p>
-            
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed max-w-lg">
-              17-year-old student exploring the frontiers of AI & Machine Learning, 
-              transforming data into intelligent solutions.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="btn-neural group" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
-                <span className="relative z-10">View My Projects</span>
-              </button>
-              <button className="btn-quantum" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-                <Terminal size={18} />
-                <span>Get In Touch</span>
-              </button>
+
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <a href="#work" className="btn-terra">
+                See projects
+                <ArrowDownRight size={16} strokeWidth={2.25} />
+              </a>
+              <a href="#contact" className="btn-ghost">
+                Contact
+              </a>
             </div>
-          </div>
-        </div>
 
-        {/* Right Side - Next-Gen Robotic Profile Interface */}
-        <div className="lg:col-span-5 relative order-1 lg:order-2">
-          {/* Holographic Display Container */}
-          <div className="floating-card animate-float-gentle max-w-md mx-auto lg:mx-0">
-            
-            {/* Enhanced Holographic Projections */}
-            <div className="absolute inset-0 bg-gradient-to-br from-green-primary/30 via-green-accent/15 to-green-secondary/10 rounded-2xl blur-2xl transform rotate-3 scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-tl from-green-accent/20 via-transparent to-green-primary/15 rounded-2xl blur-xl transform -rotate-2 scale-102" />
-            <div className="absolute inset-0 bg-gradient-to-r from-cyber-blue/10 via-transparent to-plasma-purple/5 rounded-2xl blur-lg transform rotate-1 scale-103" />
-            
-            {/* Quantum Energy Rings */}
-            <div className="absolute -inset-4">
-              <div className="absolute inset-0 border border-green-accent/20 rounded-full animate-pulse" style={{ animationDuration: '3s' }} />
-              <div className="absolute inset-2 border border-green-primary/15 rounded-full animate-pulse" style={{ animationDuration: '2s', animationDelay: '1s' }} />
+            {/* stats as filled tiles */}
+            <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl">
+              {[
+                { v: "6+", l: "Projects" },
+                { v: "2Y+", l: "Building" },
+                { v: "17", l: "Years old" },
+                { v: "BH", l: "Beaconhouse" },
+              ].map((s) => (
+                <div
+                  key={s.l}
+                  className="rounded-xl border border-ink/[0.08] bg-page/70 px-3 py-3.5"
+                >
+                  <p className="font-display text-2xl sm:text-3xl text-ink tracking-tight leading-none">
+                    {s.v}
+                  </p>
+                  <p className="mt-1.5 text-[11px] text-ink-mid">{s.l}</p>
+                </div>
+              ))}
             </div>
-            
-            {/* Main Interface Terminal */}
-            <div className="relative bg-gradient-to-br from-gray-900/95 via-black/90 to-slate-800/85 backdrop-blur-xl border border-green-accent/40 rounded-2xl overflow-hidden font-rajdhani shadow-xl shadow-green-accent/30">
-              
-              {/* Terminal Header Bar */}
-              <div className="bg-gradient-to-r from-green-primary/20 to-green-accent/15 border-b border-green-accent/30 p-3">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2">
-                    <div className="flex space-x-1">
-                      <div className="w-2 h-2 bg-red-500/80 rounded-full" />
-                      <div className="w-2 h-2 bg-yellow-500/80 rounded-full" />
-                      <div className="w-2 h-2 bg-green-accent rounded-full" />
-                    </div>
-                    <span className="text-green-accent font-orbitron text-xs tracking-wider hidden sm:inline">PROFILE_INTERFACE</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <div className="w-2 h-2 bg-green-accent rounded-full animate-pulse" />
-                    <span className="text-xs text-green-accent/80 font-orbitron hidden sm:inline">SECURE</span>
-                  </div>
-                </div>
-              </div>
 
-              {/* Main Interface Body */}
-              <div className="p-4">
-                {/* Identity Matrix */}
-                <div className="grid grid-cols-3 gap-3 mb-4">
-                  {/* Profile Avatar Section */}
-                  <div className="col-span-1">
-                    <div className="relative">
-                      <div className="relative bg-gradient-to-br from-gray-800/80 to-black/70 border border-green-accent/40 rounded-xl p-2">
-                        <div className="relative">
-                          <img 
-                            src="/lovable-uploads/99948437-1369-4d00-8abb-7e075e4bff53.png" 
-                            alt="Moiz Amjad - Data Science Student" 
-                            className="w-full h-16 sm:h-20 rounded-lg object-cover border border-green-accent/20"
-                            onContextMenu={(e) => e.preventDefault()}
-                            draggable={false}
-                            onDragStart={(e) => e.preventDefault()}
-                            style={{ userSelect: 'none' }}
-                            loading="lazy"
-                            decoding="async"
-                          />
-                          <div className="absolute top-1 right-1 w-2 h-2 bg-green-accent rounded-full animate-pulse" />
-                        </div>
-                        <div className="mt-2 text-center">
-                          <div className="text-green-accent text-xs font-orbitron">VERIFIED</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Identity Data */}
-                  <div className="col-span-2 space-y-2">
-                    <div className="bg-green-primary/10 border border-green-accent/30 rounded-xl p-3">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-green-accent text-xs font-orbitron">USER_IDENTITY</span>
-                        <Star className="text-green-accent" size={12} />
-                      </div>
-                      <h3 className="text-white font-bold text-lg font-orbitron">MOIZ AMJAD</h3>
-                      <p className="text-green-accent text-xs font-rajdhani">AI & DATA SCIENCE</p>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-2">
-                      <div className="bg-green-primary/5 border border-green-accent/20 rounded-lg p-2">
-                        <div className="flex items-center space-x-1">
-                          <Calendar className="text-green-accent" size={12} />
-                          <div>
-                            <div className="text-green-accent text-xs font-orbitron">AGE</div>
-                            <div className="text-white text-sm font-bold font-rajdhani">17</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="bg-green-primary/5 border border-green-accent/20 rounded-lg p-2">
-                        <div className="flex items-center space-x-1">
-                          <MapPin className="text-green-accent" size={12} />
-                          <div>
-                            <div className="text-green-accent text-xs font-orbitron">LOC</div>
-                            <div className="text-white text-sm font-bold font-rajdhani">MULTAN</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* System Status Grid */}
-                <div className="grid grid-cols-4 gap-2 mb-4">
-                  <div className="bg-green-primary/10 border border-green-accent/30 rounded-lg p-2 text-center">
-                    <Trophy className="text-green-accent mx-auto mb-1" size={16} />
-                    <div className="text-green-accent text-sm font-bold font-orbitron">6+</div>
-                    <div className="text-gray-400 text-xs font-rajdhani">PROJ</div>
-                  </div>
-                  
-                  <div className="bg-green-primary/10 border border-green-accent/30 rounded-lg p-2 text-center">
-                    <TrendingUp className="text-green-accent mx-auto mb-1" size={16} />
-                    <div className="text-green-accent text-sm font-bold font-orbitron">85%</div>
-                    <div className="text-gray-400 text-xs font-rajdhani">LEARN</div>
-                  </div>
-                  
-                  <div className="bg-green-primary/10 border border-green-accent/30 rounded-lg p-2 text-center">
-                    <GraduationCap className="text-green-accent mx-auto mb-1" size={16} />
-                    <div className="text-green-accent text-sm font-bold font-orbitron">2Y+</div>
-                    <div className="text-gray-400 text-xs font-rajdhani">EXPER</div>
-                  </div>
-                  
-                  <div className="bg-green-primary/10 border border-green-accent/30 rounded-lg p-2 text-center">
-                    <Zap className="text-green-accent mx-auto mb-1" size={16} />
-                    <div className="text-green-accent text-sm font-bold font-orbitron">MAX</div>
-                    <div className="text-gray-400 text-xs font-rajdhani">ENRGY</div>
-                  </div>
-                </div>
-
-                  {/* Tech Arsenal */}
-                  <div className="mb-4">
-                    <div className="flex items-center space-x-2 mb-3">
-                      <Cpu className="text-green-accent" size={14} />
-                      <h4 className="text-green-accent font-orbitron text-xs">TECH_ARSENAL</h4>
-                      <div className="flex-1 h-px bg-gradient-to-r from-green-accent/50 to-transparent" />
-                      <div className="w-2 h-2 bg-green-accent rounded-full animate-neural-pulse" />
-                    </div>
-                    <div className="grid grid-cols-3 gap-1">
-                      {[
-                        { name: 'PYTHON', icon: <Code size={10} />, level: 90 },
-                        { name: 'AI/ML', icon: <Brain size={10} />, level: 75 },
-                        { name: 'REACT', icon: <Layers size={10} />, level: 85 },
-                        { name: 'JAVA', icon: <Terminal size={10} />, level: 70 },
-                        { name: 'DATA', icon: <Database size={10} />, level: 88 },
-                        { name: 'CLOUD', icon: <Cpu size={10} />, level: 80 }
-                      ].map((tech) => (
-                        <div key={tech.name} className="bg-green-primary/15 border border-green-accent/40 rounded-md p-2 group hover:bg-green-accent/10 transition-colors">
-                          <div className="flex items-center space-x-1 mb-1">
-                            <div className="text-green-accent group-hover:scale-110 transition-transform">
-                              {tech.icon}
-                            </div>
-                            <span className="text-xs text-white font-orbitron">{tech.name}</span>
-                          </div>
-                          <div className="w-full h-1 bg-gray-700 rounded-full overflow-hidden">
-                            <div 
-                              className="h-full bg-gradient-to-r from-green-primary to-green-accent rounded-full relative"
-                              style={{ width: `${tech.level}%` }}
-                            >
-                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse" />
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                {/* Neural Network Status */}
-                <div className="bg-gradient-to-r from-green-primary/20 to-green-accent/10 border border-green-accent/40 rounded-xl p-3">
-                  <div className="flex justify-between items-center mb-2">
-                    <div className="flex items-center space-x-2">
-                      <Brain className="text-green-accent" size={14} />
-                      <span className="text-green-accent text-xs font-orbitron">AI_STATUS</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <div className="w-2 h-2 bg-green-accent rounded-full animate-pulse" />
-                      <span className="text-green-accent text-xs font-orbitron">ACTIVE</span>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-xs">
-                      <span className="text-gray-400 font-rajdhani">AI_FOCUS</span>
-                      <span className="text-green-accent font-orbitron">92%</span>
-                    </div>
-                    <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
-                      <div className="h-full bg-gradient-to-r from-green-primary to-green-accent rounded-full w-[92%]" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Terminal Footer */}
-              <div className="bg-gradient-to-r from-green-primary/10 to-green-accent/5 border-t border-green-accent/30 p-2">
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-green-accent font-orbitron">ONLINE</span>
-                  <div className="flex items-center space-x-1">
-                    <Shield className="text-green-accent" size={10} />
-                    <span className="text-green-accent font-orbitron">SECURE</span>
-                  </div>
-                </div>
+            {/* focus tags */}
+            <div className="mt-8">
+              <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-ink-mid mb-3">
+                Focus
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {focusAreas.map((f) => (
+                  <span
+                    key={f}
+                    className="rounded-full border border-ink/10 bg-page/80 px-3 py-1.5 text-[12px] font-medium text-ink-mid"
+                  >
+                    {f}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Floating Interface Elements - Enhanced */}
-          <div className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-r from-green-accent/30 to-cyber-blue/20 rounded-full animate-pulse blur-sm" />
-          <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-r from-green-primary/20 to-plasma-purple/15 rounded-full animate-neural-pulse blur-md" />
-          <div className="absolute top-8 right-8 w-2 h-2 bg-green-accent rounded-full animate-ping" />
-          <div className="absolute bottom-12 left-4 w-1 h-1 bg-cyber-blue rounded-full animate-pulse" />
-          
-          {/* Data Stream Lines */}
-          <div className="absolute top-0 right-0 w-px h-20 bg-gradient-to-b from-green-accent/40 to-transparent animate-pulse" />
-          <div className="absolute bottom-0 left-0 w-20 h-px bg-gradient-to-r from-green-primary/40 to-transparent animate-pulse" />
-        </div>
-      </div>
+          {/* ── Right: populated cluster ── */}
+          <div className="lg:col-span-5 relative">
+            {/* large watermark number */}
+            <span
+              className="pointer-events-none absolute -right-2 -top-6 font-display text-[8rem] sm:text-[10rem] leading-none text-ink/[0.05] select-none"
+              aria-hidden
+            >
+              06
+            </span>
 
-      {/* Scroll Indicator - Enhanced */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="flex flex-col items-center space-y-2">
-          <div className="relative">
-            <ChevronDown className="text-green-accent" size={28} />
-            <div className="absolute -inset-2 border border-green-accent/30 rounded-full animate-ping" />
+            <div className="relative space-y-4">
+              {/* Now reading / building */}
+              <div className="relative z-20 rounded-2xl border border-ink/[0.08] bg-page p-5 shadow-[0_16px_40px_-24px_rgba(60,30,10,0.35)]">
+                <div className="flex items-center gap-2 text-terra mb-3">
+                  <Sparkles size={15} />
+                  <span className="text-[11px] font-semibold tracking-[0.16em] uppercase">
+                    Right now
+                  </span>
+                </div>
+                <p className="font-display text-xl text-ink leading-snug">
+                  Deepening ML foundations &amp; shipping small intelligent tools.
+                </p>
+                <p className="mt-2 text-sm text-ink-mid leading-relaxed">
+                  Looking for internships where data work meets real product.
+                </p>
+              </div>
+
+              {/* Stacked mini diary previews — ties to work section */}
+              <div className="relative z-10 h-[200px] sm:h-[220px]">
+                {recentPages.map((page, i) => (
+                  <div
+                    key={page.title}
+                    className="diary-page absolute left-0 right-4 sm:right-6 p-4"
+                    style={{
+                      top: i * 28,
+                      zIndex: 3 - i,
+                      transform: `rotate(${(i - 1) * 2.2}deg)`,
+                      width: "92%",
+                      marginLeft: i * 6,
+                    }}
+                  >
+                    <div className="flex items-center justify-between mb-2 pl-6">
+                      <span className="text-[10px] font-semibold tracking-wider uppercase text-terra">
+                        {page.tag}
+                      </span>
+                      <span className="font-display text-xs text-ink-mid">
+                        {page.n}
+                      </span>
+                    </div>
+                    <p className="font-display text-lg text-ink pl-6 leading-tight">
+                      {page.title}
+                    </p>
+                    {i === 0 && (
+                      <p className="mt-1 pl-6 text-[12px] text-ink-mid">
+                        Latest entry in the project diary →
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* school + role chips row */}
+              <div className="grid grid-cols-2 gap-3 relative z-20">
+                <div className="rounded-xl border border-ink/[0.08] bg-page/90 p-4">
+                  <GraduationCap size={16} className="text-terra mb-2" />
+                  <p className="text-[11px] uppercase tracking-wider text-ink-mid">
+                    School
+                  </p>
+                  <p className="mt-0.5 font-display text-base text-ink leading-snug">
+                    Beaconhouse
+                  </p>
+                </div>
+                <div className="rounded-xl border border-ink/[0.08] bg-page/90 p-4">
+                  <BookOpen size={16} className="text-terra mb-2" />
+                  <p className="text-[11px] uppercase tracking-wider text-ink-mid">
+                    Path
+                  </p>
+                  <p className="mt-0.5 font-display text-base text-ink leading-snug">
+                    Data · AI · ML
+                  </p>
+                </div>
+              </div>
+
+              {/* quote strip */}
+              <blockquote className="rounded-xl border border-dashed border-terra/25 bg-terra/[0.06] px-4 py-3.5">
+                <p className="font-display italic text-[15px] sm:text-base text-ink leading-snug">
+                  “Find the pattern. Prove it. Ship something useful.”
+                </p>
+                <footer className="mt-2 text-[11px] tracking-wide text-ink-mid">
+                  — working note
+                </footer>
+              </blockquote>
+            </div>
           </div>
-          <span className="text-gray-400 text-xs font-orbitron tracking-wider">SCROLL TO EXPLORE</span>
         </div>
       </div>
     </section>
