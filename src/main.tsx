@@ -1,5 +1,14 @@
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import { createRoot } from "react-dom/client";
+import App from "./App";
+import "./index.css";
 
-createRoot(document.getElementById("root")!).render(<App />);
+const root = document.getElementById("root");
+if (!root) {
+  throw new Error("Root element #root not found");
+}
+
+// Clear any stale markup before mounting the new design
+root.innerHTML = "";
+root.setAttribute("data-design", "field-notes");
+
+createRoot(root).render(<App />);

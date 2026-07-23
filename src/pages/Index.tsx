@@ -7,8 +7,9 @@ import SkillsSection from "@/components/SkillsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
-const Index = () => (
-  <div className="min-h-screen bg-paper text-ink">
+/** New Field Notes portfolio page (replaces cyber green layout). */
+const Portfolio = () => (
+  <div className="min-h-screen bg-paper text-ink" data-page="portfolio-field-notes">
     <Navigation />
     <main>
       <HeroSection />
@@ -21,4 +22,4 @@ const Index = () => (
   </div>
 );
 
-export default Index;
+export default Portfolio;
